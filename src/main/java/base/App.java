@@ -25,5 +25,19 @@ Create a variant of the program that prompts for the number of people and the nu
  */
 
 public class App {
-    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("How many people? ");
+        int people = in.nextInt();
+        System.out.print("How many pizzas do you have? ");
+        int num_pizza = in.nextInt();
+        System.out.print("How many slices per pizza? ");
+        int num_slices = in.nextInt();
+        int total_slices = num_slices * num_pizza;
+        int slice_person = total_slices / people;
+        int remainder = total_slices % people;
+        System.out.printf("%d people with %d pizzas (%d slices)\n", people, num_pizza, total_slices);
+        System.out.printf("Each person gets %d pieces of pizza.\nThere are %d leftover pieces.\n", slice_person, remainder);
+
+    }
 }
